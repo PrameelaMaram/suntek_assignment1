@@ -1,0 +1,49 @@
+//program for fibonacci series of given number,should work for any kind of input
+//->recursive program for O(2^n)
+#include<stdio.h>
+int fib(int n);
+void main()
+{
+    int n,f;
+    printf("enter the position in fibonacci");
+    scanf("%d",&n);
+    f=fib(n);
+    printf("%d",f);
+}
+int fib(int n)
+{
+    if(n==0)
+        return 0;
+    else if(n==1)
+        return 1;
+    else
+        return(fib(n-1)+fib(n-2));
+}
+
+//->iterative
+#include<stdio.h>
+void main()
+{
+    int a,b,c,n;
+    printf("enter the number upto which series has to print");
+    scanf("%d",&n);
+    
+    if(n==1)
+    printf("%d",0);
+    else
+    {
+        a=0;
+        b=1;
+        printf("%d %d ",a,b);
+        while(n-2>0)
+        { c=a+b;
+         printf("%d ",c);
+         a=b;
+         b=c;
+    n--;
+        }
+
+    }
+
+
+}
