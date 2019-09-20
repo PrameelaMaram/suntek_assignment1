@@ -1,0 +1,33 @@
+//program for factorial of given number,should work for any kind of input
+//->recursive program
+#include<stdio.h>
+int fact1(int n);
+
+void main()
+{
+    int n,f;
+    printf("enter the number to find factorial");
+    scanf("%d",&n);
+    f=fact1(n);
+    printf("\nfactorial:%d",f);
+}
+int fact1(int n)
+{
+    if(n==0||n==1)
+        return 1;
+    else
+        return(n*fact1(n-1));
+
+}
+
+//->iterative
+#include<stdio.h>
+void main()
+{
+    int n,f=1,i;
+    printf("enter the number to find factorial");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    f=f*i;
+    printf("\n factorial:%d",f);
+}
