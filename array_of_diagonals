@@ -1,0 +1,45 @@
+//given n*n square matrix,return an array of its diagonals
+
+#include<stdio.h>
+void main()
+{
+
+    int a[10][10],i,j,k,n,r;
+    printf("the square matrix dimension");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+            scanf("%d",&a[i][j]);
+    }
+    printf("\n the sets are as follows ");
+
+    for(i=0;i<n;i++)
+    {
+        printf("\n");
+        j=0;k=i;
+        printf("{ ");
+        while(j<i+1)
+        {
+            printf("%d ",a[k][j]);
+            j++;
+            k--;
+        }
+        printf("}");
+    }
+    r=1;
+    while(r<n)
+    {
+        printf("\n");
+        printf("{ ");
+        j=r;k=n-1;
+        while(j<n)
+        {
+            printf("%d ",a[k][j]);
+            j++;
+            k--;
+        }
+        r++;
+        printf("}");
+    }
+}
