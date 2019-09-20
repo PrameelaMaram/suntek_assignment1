@@ -1,0 +1,44 @@
+//program for power(x,n) using recursive and iterative approach
+//->iterative
+#include<stdio.h>
+void main()
+{
+    int n,i,x,f;
+    printf("enter the number");
+    scanf("%d",&x);
+    printf("\n enter the exponent number");
+    scanf("%d",&n);
+    if(n==0)
+        printf("%d",1);
+    else if(n==1)
+        printf("%d",x);
+    else
+    { f=x;
+        for(i=2;i<=n;i++)
+            f*=x;
+            printf("%d",f);
+    }
+
+}
+
+//->recursive
+
+#include<stdio.h>
+int power(int n,int x)
+{ if(n==0)
+   return 1;
+  else if(n==1)
+    return x;
+   else
+    return(power(n-1,x)*x);
+
+}
+void main()
+{
+    int n,x,f;
+    printf("enter the number");
+    scanf("%d",&x);
+    printf("enter the exponent ");
+    scanf("%d",&n);
+    f=power(n,x);
+}
