@@ -1,0 +1,43 @@
+//program for x^n mod m using recursive and iterative approach
+//-> RECURSIVE
+#include<stdio.h>
+int power(int n,int x,int p)
+{ if(n==0)
+   return 1;
+  else if(n==1)
+    return x;
+   else
+    return((power(n-1,x,p)*x)%p);
+
+}
+void main()
+{
+    int n,x,f,p;
+    printf("enter the number and modular number");
+    scanf("%d%d",&x,&p);
+    printf("enter the exponent ");
+    scanf("%d",&n);
+    f=power(n,x,p);
+}
+
+//->>ITERATIVE
+#include<stdio.h>
+void main()
+{
+    int n,i,x,f,p;
+    printf("enter the number and modular number");
+    scanf("%d%d",&x,&p);
+    printf("\n enter the exponent number");
+    scanf("%d",&n);
+    if(n==0)
+        printf("%d",1);
+    else if(n==1)
+        printf("%d",x);
+    else
+    { f=x;
+        for(i=2;i<=n;i++)
+            f=(f*x)%p;
+            printf("%d",f);
+    }
+
+}
