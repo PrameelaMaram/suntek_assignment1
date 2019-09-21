@@ -1,0 +1,30 @@
+//find the contiguous subarray within an array (containing at least one element )which has the largest sum
+//->but here displaying the max sum of the contiguous subarray 
+#include<stdio.h>
+int max(int ,int  );
+void main()
+{
+    int a[50],n,i,cm,msf;
+    printf("enter the no of elements");
+    scanf("%d",&n);
+    printf("\nenter the whose missing element has to be found");
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+      cm=a[0];
+      msf=a[0];
+      for(i=0;i<n;i++)
+      {
+          cm=max(a[i],a[i]+cm);
+          msf=max(msf,cm);
+
+      }
+    printf("\n%d ->is the maximum contiguous sum in given array",msf);
+
+}
+int max(int a,int b)
+{
+    if(a>b)
+        return a;
+    else
+        return b;
+}
