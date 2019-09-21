@@ -1,0 +1,33 @@
+//given an unsorted integer array ,find the first missing positive integer
+//algorithn should be of O(N) but here it was return with respect to O(N^2)
+#include<stdio.h>
+void main()
+{
+    int n,a[100],min=1,i,t,j;
+    printf("enter the size of unsorted array");
+    scanf("%d",&n);
+    printf("\n enter the elements of unsorted array");
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+        //soting them
+        for(i=0;i<n;i++)
+        {
+            for(j=i;j<n;j++)
+            {
+                if(a[i]>a[j])
+                {
+                    t=a[i];
+                    a[i]=a[j];
+                    a[j]=t;
+                }
+            }
+        }
+    for(i=0;i<n;i++)
+           { if(a[i]>min)
+            break;
+            if(a[i]==min)
+                min=min+1;
+
+           }
+   printf("\n the first missing positive element is %d",min);
+}
